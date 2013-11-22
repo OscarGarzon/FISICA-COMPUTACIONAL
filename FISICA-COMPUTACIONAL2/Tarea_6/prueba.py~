@@ -1,0 +1,27 @@
+#!/usr/bin/python
+# -*- coding: latin-1 -*-
+import matplotlib.pyplot as pl
+import matplotlib.pyplot as plt
+import math
+import numpy as np
+import sys, string, os
+
+print "This program runs with the following arguments:", sys.argv
+n_args = len(sys.argv)
+
+for i in range(n_args):
+    print sys.argv[i]
+
+h=sys.argv[1]
+
+files=np.loadtxt(h)
+g=[121]
+v=[121]
+for i in range(12):
+	g[i]=files[i][1]
+for i in range(12):
+	v[i]=files[i][2]
+
+pl.scatter(g,v)
+plt.axis([-100,100 , -100, 100])
+plt.show()
